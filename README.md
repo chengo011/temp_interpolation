@@ -2,19 +2,19 @@
 
 This Python project reconstructs **internal data gaps** in the Jena Climate Dataset
 2009–2016. It explicitly uses observations **before and after** a gap.
-The target variable is `T (degC)`, and the temporal resolution is ten minutes.
+The target variable is `T (degC)` and the temporal resolution is ten minutes.
 
 The implementation follows the [project instructions](docs/Anleitung.md). Program identifiers,
-docstrings, and code comments are in English. This README and the results report are also in English.
+docstrings and code comments are in English. This README and the results report are also in English.
 
 ## Results and Files
 
 The full experiment suite is complete: nine trained models,
-both outage scenarios, and all agreed context comparisons. All 34 automated
+both outage scenarios and all agreed context comparisons. All 34 automated
 tests and the independent final verification of the saved results have passed.
 
 In the main experiment, classical methods are more accurate for short gaps. For
-six-hour gaps, the BiLSTM MAE is 0.5320 °C compared with 0.6888 °C for linear
+six-hour gaps the BiLSTM MAE is 0.5320 °C compared with 0.6888 °C for linear
 interpolation, a reduction of 22.8%. With equal weighting across all six gap lengths,
 PCHIP achieves approximately 0.274 °C and is more accurate overall than the BiLSTM at 0.328 °C.
 These findings apply to the fixed 2016 test cases and the training seed used in this run.
@@ -45,15 +45,15 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --cache-dir .cache\pip -r requirements.txt
 ```
 
-To repeat the experiment with the same library versions, use the dependency
+To repeat the experiment with the same library versions use the dependency
 file saved during the run instead:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install --cache-dir .cache\pip -r results\full_experiment\requirements.lock.txt
 ```
 
-PyTorch uses an available CUDA GPU, or the CPU otherwise. Model selection,
-training settings, and the number of experiments do not depend on the device.
+PyTorch uses an available CUDA GPU or the CPU otherwise. Model selection,
+training settings and the number of experiments do not depend on the device.
 Bit-for-bit identical results across different hardware and library versions
 are not guaranteed; random seeds are set and deterministic PyTorch operations are enabled.
 
@@ -69,16 +69,16 @@ SHA-256 checksums identify the exact files used.
 
 Preparation includes:
 
-1. Parse timestamps, sort them stably, and handle duplicates by keeping the first record.
+1. Parse timestamps, sort them stably and handle duplicates by keeping the first record.
 2. Check ten-minute intervals and insert NaN rows for missing timestamps.
-3. Mark non-finite and physically implausible values as NaN, including `-9999` wind values.
-4. Split chronologically: training 2009–2014, validation 2015, and test 2016.
+3. Mark non-finite and physically implausible values as NaN including `-9999` wind values.
+4. Split chronologically: training 2009–2014, validation 2015 and test 2016.
 5. Identify a shared set of complete windows and save fixed comparison gaps.
 
 The source file contains a final observation on January 1, 2017. This falls
 outside the configured periods. Originally missing values are **not** interpolated
 before the experiment. Window eligibility is checked using all
-allowed sensors and the largest context, including for shorter contexts
+allowed sensors and the largest context including for shorter contexts
 and the temperature-only model. This keeps the comparison cases identical.
 
 The original timestamps have no explicit time zone. Their time labels are
@@ -94,10 +94,10 @@ The tests check chronological ordering and separation, masking in both scenarios
 preservation of ground truth, absence of hidden target information,
 output dimensions, masked loss and its gradients, training-only normalization,
 reproducible gaps, mathematically correct interpolation, actual
-backpropagation, and application to new gaps.
+backpropagation and application to new gaps.
 
 After a complete run, the saved model checkpoints, test positions,
-Celsius reference values, and metrics can also be verified independently:
+Celsius reference values and metrics can also be verified independently:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\verify_artifacts.py
@@ -115,20 +115,20 @@ This command executes the entire experimental protocol:
 2. Train and validate all nine BiLSTM models.
 3. Load the best model for each run, selected exclusively by validation loss.
 4. Only then evaluate all models on the previously unused test year.
-5. Generate result tables, individual predictions, plots, and the results report.
+5. Generate result tables, individual predictions, plots and the results report.
 
-The project uses linear interpolation, cubic splines (`not-a-knot`), PCHIP, and
+The project uses linear interpolation, cubic splines (`not-a-knot`), PCHIP and
 forward fill as baselines. They receive only observed temperature values;
 the hidden original values are physically removed before calling each method.
 
 The BiLSTM consists of a bidirectional LSTM with 64 units, dropout of 0.2, a second
-bidirectional LSTM with 32 units, and dense layers with 16 and one unit, respectively.
+bidirectional LSTM with 32 units and dense layers with 16 and one unit, respectively.
 It outputs a temperature at every time step. MSE is computed exclusively at
 artificially hidden positions. The input also contains
 a binary observation mask for each sensor used.
 
 Default settings: Adam, a learning rate of 0.001, a batch size of 64, at most 50 epochs,
-early stopping after seven epochs without improvement, and halving the learning rate
+early stopping after seven epochs without improvement and halving the learning rate
 on a plateau. Each epoch draws 4096 windows with random gap lengths from the entire
 training period. An epoch therefore does not cover every possible,
 heavily overlapping window. A gap length is randomly selected per
@@ -158,7 +158,7 @@ of the agreed experimental protocol.
 The `configs/` directory contains one JSON file per experiment. These files allow
 changes to features, time periods, gap lengths, context, batch size, epochs,
 learning rate, LSTM sizes, dropout, seed, and scenario. Shared settings for the
-time split, gaps, and seed must agree across all nine files. When changing the
+time split, gaps and seed must agree across all nine files. When changing the
 experimental protocol, first back up the old files from `data/processed/` in another
 project subfolder, because conflicting saved comparison gaps are deliberately
 not overwritten silently.
@@ -172,20 +172,20 @@ Use a new name for a new run:
 The saved `protocol.json` contains code, data, and manifest checksums, as well as
 all settings. An existing run is not mixed with changed code or settings.
 Completed training runs are reused when the protocol matches. A run interrupted
-**during training** is not resumed from an incomplete state; a new run name
+**during training** is not resumed from an incomplete state, a new run name
 is required. Re-evaluating a completed run loads the same
 best model weights.
 
 ## Preventing Data Leakage
 
-Allowed sensor inputs are temperature, air pressure, relative humidity, and the
+Allowed sensor inputs are temperature, air pressure, relative humidity and the
 components of wind velocity and maximum wind velocity. Wind direction is converted
 into components using sine and cosine rather than being supplied as a raw
-angle. Daily and yearly phases are encoded cyclically; the yearly phase
+angle. Daily and yearly phases are encoded cyclically. The yearly phase
 accounts for leap years.
 
 Potential temperature, dew point, vapor pressure variables, specific humidity,
-water concentration, and air density are excluded as a precaution: combinations
+water concentration and air density are excluded as a precaution: combinations
 of these quantities can mathematically encode temperature information. The reasons
 are also saved in each `preprocessing.json` file.
 
@@ -221,7 +221,7 @@ values are preserved; the original file is not overwritten.
 A companion `*.audit.json` file documents the cleaning process.
 
 Only gap lengths included in training are accepted. Missing context,
-gaps at the boundaries, other gaps within the required context, and incomplete
+gaps at the boundaries, other gaps within the required context and incomplete
 required sensor inputs are rejected with an explanatory error message. The
 system does not extrapolate beyond the available time interval.
 
@@ -233,7 +233,7 @@ along with the number of gaps and points. The average model MAE in the
 bar chart weights each gap length equally so that long gaps do not dominate
 simply because they contain more points.
 
-The saved gaps may overlap; their errors are not independent.
+The saved gaps may overlap, their errors are not independent.
 The results apply to the selected complete windows from 2016 and
 one training seed. They do not establish statistical significance or
 guarantee performance for other stations or outage conditions. No
