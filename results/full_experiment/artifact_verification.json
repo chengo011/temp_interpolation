@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "experiments": [
+    {
+      "experiment": "A_multivariate_context_12h",
+      "best_epoch": 50,
+      "epochs_completed": 50,
+      "test_points_per_method": 20992,
+      "verified_plot_count": 9,
+      "status": "passed"
+    },
+    {
+      "experiment": "A_temperature_only_context_12h",
+      "best_epoch": 32,
+      "epochs_completed": 39,
+      "test_points_per_method": 20992,
+      "verified_plot_count": 9,
+      "status": "passed"
+    },
+    {
+      "experiment": "B_multivariate_context_12h",
+      "best_epoch": 48,
+      "epochs_completed": 50,
+      "test_points_per_method": 20992,
+      "verified_plot_count": 9,
+      "status": "passed"
+    },
+    {
+      "experiment": "A_multivariate_context_3h",
+      "best_epoch": 41,
+      "epochs_completed": 48,
+      "test_points_per_method": 20992,
+      "verified_plot_count": 9,
+      "status": "passed"
+    },
+    {
+      "experiment": "B_multivariate_context_3h",
+      "best_epoch": 49,
+      "epochs_completed": 50,
+      "test_points_per_method": 20992,
+      "verified_plot_count": 9,
+      "status": "passed"
+    },
+    {
+      "experiment": "A_multivariate_context_6h",
+      "best_epoch": 49,
+      "epochs_completed": 50,
+      "test_points_per_method": 20992,
+      "verified_plot_count": 9,
+      "status": "passed"
+    },
+    {
+      "experiment": "B_multivariate_context_6h",
+      "best_epoch": 23,
+      "epochs_completed": 30,
+      "test_points_per_method": 20992,
+      "verified_plot_count": 9,
+      "status": "passed"
+    },
+    {
+      "experiment": "A_multivariate_context_24h",
+      "best_epoch": 49,
+      "epochs_completed": 50,
+      "test_points_per_method": 20992,
+      "verified_plot_count": 9,
+      "status": "passed"
+    },
+    {
+      "experiment": "B_multivariate_context_24h",
+      "best_epoch": 23,
+      "epochs_completed": 30,
+      "test_points_per_method": 20992,
+      "verified_plot_count": 9,
+      "status": "passed"
+    }
+  ],
+  "checks": [
+    "source and manifest hashes",
+    "best validation checkpoint",
+    "train-only scaler provenance",
+    "identical test cases",
+    "independent metric recomputation",
+    "unaltered Celsius truth",
+    "complete plots",
+    "complete experiment matrix"
+  ]
+}

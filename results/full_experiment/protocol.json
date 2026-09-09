@@ -1,0 +1,509 @@
+{
+  "data_sha256": {
+    "archive_sha256": "63d757501e92284a7de7cdbef0337f03b24e13ead7ac2b5b8c86a18d8e38ba5b",
+    "csv_sha256": "9626d3964f7afb3fa94b6f3d3a0e92fe96e4a4477c31ed9875cc64d6717c129f",
+    "url": "https://storage.googleapis.com/tensorflow/tf-keras-datasets/jena_climate_2009_2016.csv.zip"
+  },
+  "experiments": [
+    {
+      "batch_size": 64,
+      "context_steps": 72,
+      "dense_size": 16,
+      "dropout": 0.2,
+      "early_stopping_patience": 7,
+      "epochs": 50,
+      "gap_lengths": [
+        1,
+        3,
+        6,
+        12,
+        24,
+        36
+      ],
+      "hidden_sizes": [
+        64,
+        32
+      ],
+      "learning_rate": 0.001,
+      "name": "A_multivariate_context_12h",
+      "samples_per_epoch": 4096,
+      "sampling_context_steps": 144,
+      "scenario": "A",
+      "scheduler_patience": 3,
+      "seed": 20260908,
+      "sensor_features": [
+        "T (degC)",
+        "p (mbar)",
+        "rh (%)",
+        "wind_x",
+        "wind_y",
+        "max_wind_x",
+        "max_wind_y"
+      ],
+      "target": "T (degC)",
+      "test_gaps_per_length": 256,
+      "test_years": [
+        2016
+      ],
+      "threads": 4,
+      "train_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "validation_gaps_per_length": 64,
+      "validation_years": [
+        2015
+      ]
+    },
+    {
+      "batch_size": 64,
+      "context_steps": 72,
+      "dense_size": 16,
+      "dropout": 0.2,
+      "early_stopping_patience": 7,
+      "epochs": 50,
+      "gap_lengths": [
+        1,
+        3,
+        6,
+        12,
+        24,
+        36
+      ],
+      "hidden_sizes": [
+        64,
+        32
+      ],
+      "learning_rate": 0.001,
+      "name": "A_temperature_only_context_12h",
+      "samples_per_epoch": 4096,
+      "sampling_context_steps": 144,
+      "scenario": "A",
+      "scheduler_patience": 3,
+      "seed": 20260908,
+      "sensor_features": [
+        "T (degC)"
+      ],
+      "target": "T (degC)",
+      "test_gaps_per_length": 256,
+      "test_years": [
+        2016
+      ],
+      "threads": 4,
+      "train_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "validation_gaps_per_length": 64,
+      "validation_years": [
+        2015
+      ]
+    },
+    {
+      "batch_size": 64,
+      "context_steps": 72,
+      "dense_size": 16,
+      "dropout": 0.2,
+      "early_stopping_patience": 7,
+      "epochs": 50,
+      "gap_lengths": [
+        1,
+        3,
+        6,
+        12,
+        24,
+        36
+      ],
+      "hidden_sizes": [
+        64,
+        32
+      ],
+      "learning_rate": 0.001,
+      "name": "B_multivariate_context_12h",
+      "samples_per_epoch": 4096,
+      "sampling_context_steps": 144,
+      "scenario": "B",
+      "scheduler_patience": 3,
+      "seed": 20260908,
+      "sensor_features": [
+        "T (degC)",
+        "p (mbar)",
+        "rh (%)",
+        "wind_x",
+        "wind_y",
+        "max_wind_x",
+        "max_wind_y"
+      ],
+      "target": "T (degC)",
+      "test_gaps_per_length": 256,
+      "test_years": [
+        2016
+      ],
+      "threads": 4,
+      "train_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "validation_gaps_per_length": 64,
+      "validation_years": [
+        2015
+      ]
+    },
+    {
+      "batch_size": 64,
+      "context_steps": 18,
+      "dense_size": 16,
+      "dropout": 0.2,
+      "early_stopping_patience": 7,
+      "epochs": 50,
+      "gap_lengths": [
+        1,
+        3,
+        6,
+        12,
+        24,
+        36
+      ],
+      "hidden_sizes": [
+        64,
+        32
+      ],
+      "learning_rate": 0.001,
+      "name": "A_multivariate_context_3h",
+      "samples_per_epoch": 4096,
+      "sampling_context_steps": 144,
+      "scenario": "A",
+      "scheduler_patience": 3,
+      "seed": 20260908,
+      "sensor_features": [
+        "T (degC)",
+        "p (mbar)",
+        "rh (%)",
+        "wind_x",
+        "wind_y",
+        "max_wind_x",
+        "max_wind_y"
+      ],
+      "target": "T (degC)",
+      "test_gaps_per_length": 256,
+      "test_years": [
+        2016
+      ],
+      "threads": 4,
+      "train_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "validation_gaps_per_length": 64,
+      "validation_years": [
+        2015
+      ]
+    },
+    {
+      "batch_size": 64,
+      "context_steps": 18,
+      "dense_size": 16,
+      "dropout": 0.2,
+      "early_stopping_patience": 7,
+      "epochs": 50,
+      "gap_lengths": [
+        1,
+        3,
+        6,
+        12,
+        24,
+        36
+      ],
+      "hidden_sizes": [
+        64,
+        32
+      ],
+      "learning_rate": 0.001,
+      "name": "B_multivariate_context_3h",
+      "samples_per_epoch": 4096,
+      "sampling_context_steps": 144,
+      "scenario": "B",
+      "scheduler_patience": 3,
+      "seed": 20260908,
+      "sensor_features": [
+        "T (degC)",
+        "p (mbar)",
+        "rh (%)",
+        "wind_x",
+        "wind_y",
+        "max_wind_x",
+        "max_wind_y"
+      ],
+      "target": "T (degC)",
+      "test_gaps_per_length": 256,
+      "test_years": [
+        2016
+      ],
+      "threads": 4,
+      "train_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "validation_gaps_per_length": 64,
+      "validation_years": [
+        2015
+      ]
+    },
+    {
+      "batch_size": 64,
+      "context_steps": 36,
+      "dense_size": 16,
+      "dropout": 0.2,
+      "early_stopping_patience": 7,
+      "epochs": 50,
+      "gap_lengths": [
+        1,
+        3,
+        6,
+        12,
+        24,
+        36
+      ],
+      "hidden_sizes": [
+        64,
+        32
+      ],
+      "learning_rate": 0.001,
+      "name": "A_multivariate_context_6h",
+      "samples_per_epoch": 4096,
+      "sampling_context_steps": 144,
+      "scenario": "A",
+      "scheduler_patience": 3,
+      "seed": 20260908,
+      "sensor_features": [
+        "T (degC)",
+        "p (mbar)",
+        "rh (%)",
+        "wind_x",
+        "wind_y",
+        "max_wind_x",
+        "max_wind_y"
+      ],
+      "target": "T (degC)",
+      "test_gaps_per_length": 256,
+      "test_years": [
+        2016
+      ],
+      "threads": 4,
+      "train_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "validation_gaps_per_length": 64,
+      "validation_years": [
+        2015
+      ]
+    },
+    {
+      "batch_size": 64,
+      "context_steps": 36,
+      "dense_size": 16,
+      "dropout": 0.2,
+      "early_stopping_patience": 7,
+      "epochs": 50,
+      "gap_lengths": [
+        1,
+        3,
+        6,
+        12,
+        24,
+        36
+      ],
+      "hidden_sizes": [
+        64,
+        32
+      ],
+      "learning_rate": 0.001,
+      "name": "B_multivariate_context_6h",
+      "samples_per_epoch": 4096,
+      "sampling_context_steps": 144,
+      "scenario": "B",
+      "scheduler_patience": 3,
+      "seed": 20260908,
+      "sensor_features": [
+        "T (degC)",
+        "p (mbar)",
+        "rh (%)",
+        "wind_x",
+        "wind_y",
+        "max_wind_x",
+        "max_wind_y"
+      ],
+      "target": "T (degC)",
+      "test_gaps_per_length": 256,
+      "test_years": [
+        2016
+      ],
+      "threads": 4,
+      "train_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "validation_gaps_per_length": 64,
+      "validation_years": [
+        2015
+      ]
+    },
+    {
+      "batch_size": 64,
+      "context_steps": 144,
+      "dense_size": 16,
+      "dropout": 0.2,
+      "early_stopping_patience": 7,
+      "epochs": 50,
+      "gap_lengths": [
+        1,
+        3,
+        6,
+        12,
+        24,
+        36
+      ],
+      "hidden_sizes": [
+        64,
+        32
+      ],
+      "learning_rate": 0.001,
+      "name": "A_multivariate_context_24h",
+      "samples_per_epoch": 4096,
+      "sampling_context_steps": 144,
+      "scenario": "A",
+      "scheduler_patience": 3,
+      "seed": 20260908,
+      "sensor_features": [
+        "T (degC)",
+        "p (mbar)",
+        "rh (%)",
+        "wind_x",
+        "wind_y",
+        "max_wind_x",
+        "max_wind_y"
+      ],
+      "target": "T (degC)",
+      "test_gaps_per_length": 256,
+      "test_years": [
+        2016
+      ],
+      "threads": 4,
+      "train_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "validation_gaps_per_length": 64,
+      "validation_years": [
+        2015
+      ]
+    },
+    {
+      "batch_size": 64,
+      "context_steps": 144,
+      "dense_size": 16,
+      "dropout": 0.2,
+      "early_stopping_patience": 7,
+      "epochs": 50,
+      "gap_lengths": [
+        1,
+        3,
+        6,
+        12,
+        24,
+        36
+      ],
+      "hidden_sizes": [
+        64,
+        32
+      ],
+      "learning_rate": 0.001,
+      "name": "B_multivariate_context_24h",
+      "samples_per_epoch": 4096,
+      "sampling_context_steps": 144,
+      "scenario": "B",
+      "scheduler_patience": 3,
+      "seed": 20260908,
+      "sensor_features": [
+        "T (degC)",
+        "p (mbar)",
+        "rh (%)",
+        "wind_x",
+        "wind_y",
+        "max_wind_x",
+        "max_wind_y"
+      ],
+      "target": "T (degC)",
+      "test_gaps_per_length": 256,
+      "test_years": [
+        2016
+      ],
+      "threads": 4,
+      "train_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "validation_gaps_per_length": 64,
+      "validation_years": [
+        2015
+      ]
+    }
+  ],
+  "manifest_sha256": {
+    "test": "ddc3618b197132e00a1b6993dccef1444b2a2843dd1746361550dcb81817902e",
+    "validation": "fb0662bf9234ee4989370bfb5cb0e975a63be2a959371e6183bae57c307c806d"
+  },
+  "source_sha256": {
+    "temperature_interpolation\\__init__.py": "decf592120359ec76b645716ec6249035a84b7b78e12b212d651da9daf9a1ef5",
+    "temperature_interpolation\\baselines.py": "b8d039359a80cb54c9074f603d8790f914f4c606e5658286ddbc16b7ac7207b5",
+    "temperature_interpolation\\cleaning.py": "eb2e244dbeed777d9da5afb149a7c10a729b857672b1531fd063f3f20bde0d6e",
+    "temperature_interpolation\\config.py": "e476ab51d4562433175b9c01d80942a4e8d5a8e89dac061c64f8870a79702316",
+    "temperature_interpolation\\download.py": "2a09f86ad65bda4ffe2716e3b473e4960ee1fb167733fd8f70c8e7e96d8a5e12",
+    "temperature_interpolation\\evaluation.py": "1aba4f70ab606449ca5990491d2da7f0b787155255d85af0f8c11057f9312bcb",
+    "temperature_interpolation\\features.py": "991206d4017402006bc4ab793e425dba7cbe52d6d64df98ebbeda792a7802fee",
+    "temperature_interpolation\\gaps.py": "4573c948805b6f79f23b32cf71847427b7ffda569a6c24a9140543763bee131e",
+    "temperature_interpolation\\inference.py": "b5af55c9143d81fe6079d82a733a367f15bfc5c1f31a8a1c0bf8e022b09f0d73",
+    "temperature_interpolation\\model.py": "b112a4cc2105c0a1ae68eb464341e949678929c6ced349adb6f6f0c32093c5f8",
+    "temperature_interpolation\\pipeline.py": "adb90194cb956a1e556a79f6f6c2aea901edd8415b2d68f7bc0ce75818a416e1",
+    "temperature_interpolation\\reporting.py": "d99fac4eaa53842c14546362a745999b1b039f3616b683251cb283df23053bc5",
+    "temperature_interpolation\\training.py": "8b70d412a8427cb228d543d7d4e8b7baaee951f0d5aca0752b9cbed3c1f96b7d",
+    "temperature_interpolation\\visualization.py": "b4d699a1f50b58b84db0725bde6e7747774ec371f2b17df263b31c1b89da6254"
+  }
+}

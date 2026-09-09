@@ -1,0 +1,35 @@
+{
+  "columns": [
+    "T (degC)",
+    "day_sin",
+    "day_cos",
+    "year_sin",
+    "year_cos"
+  ],
+  "mean": [
+    9.173851980317309,
+    -6.936452668092248e-18,
+    -3.1695419695298174e-06,
+    0.0,
+    -3.1695419695418775e-06
+  ],
+  "scale": [
+    8.533942029875085,
+    0.7071079017879696,
+    0.707105660576246,
+    0.7071079017879696,
+    0.707105660576246
+  ],
+  "fit_start": "2009-01-01 00:10:00",
+  "fit_end": "2014-12-31 23:50:00",
+  "excluded_features": {
+    "Tpot (K)": "Potential temperature is derived from temperature and pressure.",
+    "Tdew (degC)": "Dew point together with humidity can encode temperature.",
+    "VPmax (mbar)": "Saturation vapor pressure is a function of temperature.",
+    "VPact (mbar)": "Vapor pressure combined with humidity can encode temperature.",
+    "VPdef (mbar)": "Vapor pressure deficit contains temperature-dependent information.",
+    "sh (g/kg)": "Specific humidity combines with other weather variables to recover temperature.",
+    "H2OC (mmol/mol)": "Water concentration may indirectly recover temperature with other inputs.",
+    "rho (g/m**3)": "Air density is linked algebraically to pressure and temperature."
+  }
+}

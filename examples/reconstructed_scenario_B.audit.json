@@ -1,0 +1,46 @@
+{
+  "cleaned_rows": 156,
+  "duplicate_timestamps": 0,
+  "first_timestamp": "2015-01-01 15:00:00",
+  "inserted_missing_timestamps": 0,
+  "interval_counts_seconds": {
+    "600": 155
+  },
+  "invalid_physical_values": {
+    "H2OC (mmol/mol)": 0,
+    "T (degC)": 0,
+    "Tdew (degC)": 0,
+    "Tpot (K)": 0,
+    "VPact (mbar)": 0,
+    "VPdef (mbar)": 0,
+    "VPmax (mbar)": 0,
+    "max. wv (m/s)": 0,
+    "p (mbar)": 0,
+    "rh (%)": 0,
+    "rho (g/m**3)": 0,
+    "sh (g/kg)": 0,
+    "wd (deg)": 0,
+    "wv (m/s)": 0
+  },
+  "invalid_timestamps": 0,
+  "last_timestamp": "2015-01-02 16:50:00",
+  "missing_before_physical_checks": {
+    "H2OC (mmol/mol)": 12,
+    "T (degC)": 12,
+    "Tdew (degC)": 12,
+    "Tpot (K)": 12,
+    "VPact (mbar)": 12,
+    "VPdef (mbar)": 12,
+    "VPmax (mbar)": 12,
+    "max. wv (m/s)": 12,
+    "p (mbar)": 12,
+    "rh (%)": 12,
+    "rho (g/m**3)": 12,
+    "sh (g/kg)": 12,
+    "wd (deg)": 12,
+    "wv (m/s)": 12
+  },
+  "off_grid_rows": 0,
+  "raw_rows": 156,
+  "unknown_temperature_rows": 12
+}

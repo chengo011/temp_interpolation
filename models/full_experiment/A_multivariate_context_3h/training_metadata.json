@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-09-08T20:39:29.155193+00:00",
+  "finished_utc": "2026-09-08T20:42:56.228648+00:00",
+  "device": "cpu",
+  "torch_version": "2.14.0+cpu",
+  "best_epoch": 41,
+  "best_validation_masked_mse": 0.006102459279468238,
+  "epochs_completed": 48,
+  "parameter_count": 85537,
+  "training_candidates_per_length": {
+    "1": 313964,
+    "3": 313954,
+    "6": 313939,
+    "12": 313909,
+    "24": 313849,
+    "36": 313789
+  }
+}

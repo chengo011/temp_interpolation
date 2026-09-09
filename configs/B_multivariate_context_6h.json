@@ -1,0 +1,54 @@
+{
+  "name": "B_multivariate_context_6h",
+  "target": "T (degC)",
+  "scenario": "B",
+  "sensor_features": [
+    "T (degC)",
+    "p (mbar)",
+    "rh (%)",
+    "wind_x",
+    "wind_y",
+    "max_wind_x",
+    "max_wind_y"
+  ],
+  "train_years": [
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014
+  ],
+  "validation_years": [
+    2015
+  ],
+  "test_years": [
+    2016
+  ],
+  "gap_lengths": [
+    1,
+    3,
+    6,
+    12,
+    24,
+    36
+  ],
+  "context_steps": 36,
+  "sampling_context_steps": 144,
+  "batch_size": 64,
+  "epochs": 50,
+  "samples_per_epoch": 4096,
+  "validation_gaps_per_length": 64,
+  "test_gaps_per_length": 256,
+  "learning_rate": 0.001,
+  "hidden_sizes": [
+    64,
+    32
+  ],
+  "dense_size": 16,
+  "dropout": 0.2,
+  "early_stopping_patience": 7,
+  "scheduler_patience": 3,
+  "seed": 20260908,
+  "threads": 4
+}
