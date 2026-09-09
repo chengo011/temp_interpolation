@@ -65,7 +65,7 @@ Positive values indicate a lower BiLSTM MAE; negative values indicate a higher M
 
 With 12 hours of context, the MAE is 0.3282 °C with additional sensors, 0.4286 °C with temperature and time only, and 0.3842 °C for a complete station outage. The plots also show how these differences vary by gap length.
 
-These results apply to the fixed test gaps from 2016, the chosen architecture, and one training seed. No statistical significance tests were performed. Context windows and some test gaps may overlap, so the errors are not independent. Selecting complete windows excludes real problem intervals and limits generalizability. No comprehensive hyperparameter search was conducted. The test comparisons evaluate the predefined experimental protocol and were not used for subsequent tuning.
+These results apply to the fixed test gaps from 2016, the chosen architecture and one training seed. No statistical significance tests were performed. Context windows and some test gaps may overlap, so the errors are not independent. Selecting complete windows excludes real problem intervals and limits generalizability. No comprehensive hyperparameter search was conducted. The test comparisons evaluate the predefined experimental protocol and were not used for subsequent tuning.
 
 MAE and RMSE are calculated exclusively at masked positions in Celsius. Points receive equal weight within each gap length; the model comparison then averages the six MAE values with equal weighting. The complete CSV tables contain both metrics, gap counts, and point counts. Reconstruction examples use the first saved test gap of each length rather than a selection of particularly successful cases.
 
@@ -81,4 +81,3 @@ MAE and RMSE are calculated exclusively at masked positions in Celsius. Points r
 
 - [TensorFlow: Jena dataset, time features, and wind preprocessing](https://www.tensorflow.org/tutorials/structured_data/time_series)
 - [Original data source at the Max Planck Institute for Biogeochemistry](https://www.bgc-jena.mpg.de/wetter/)
-- Project requirements: `docs/Anleitung.md`.
