@@ -247,7 +247,6 @@ temp_interpolation/
   configs/                    central JSON configurations
   data/raw/                   original download, CSV, provenance, and checksums
   data/processed/             cleaned data, audit, splits, and fixed gaps
-  docs/Anleitung.md           original project requirements
   examples/                   input and reconstruction examples
   models/full_experiment/     nine models with configurations and results
   results/full_experiment/    overall comparison, report, and reproducibility protocol
