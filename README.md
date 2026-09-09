@@ -4,9 +4,6 @@ This Python project reconstructs **internal data gaps** in the Jena Climate Data
 2009–2016. It explicitly uses observations **before and after** a gap.
 The target variable is `T (degC)` and the temporal resolution is ten minutes.
 
-The implementation follows the [project instructions](docs/Anleitung.md). Program identifiers,
-docstrings and code comments are in English. This README and the results report are also in English.
-
 ## Results and Files
 
 The full experiment suite is complete: nine trained models,
