@@ -18,7 +18,7 @@ These findings apply to the fixed 2016 test cases and the training seed used in 
 
 The results are available here:
 
-- [Results report](results/full_experiment/Results_Documentaiton.md)
+- [Results report](results/full_experiment/Results_Documentation.md)
 - [All test metrics: MAE and RMSE](results/full_experiment/all_test_metrics.csv)
 - [Sensor availability comparison](results/full_experiment/sensor_availability_comparison.png)
 - [Context length comparison](results/full_experiment/context_length_comparison.png)
